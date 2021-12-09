@@ -63,4 +63,4 @@ Setup the basic scaffolding of the application with initial styling and basic be
   - Create a reducer that will filter the products list based on the active category
 - Active Category
   - State should store active category
-    - Other components (products, etc) might need to reference thi
+    - Other components (products, etc) might need to reference this
