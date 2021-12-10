@@ -5,6 +5,8 @@ import { Box, Button } from '@mui/material';
 // stack typography from mui
 
 function Categories(props) {
+  console.log(props);
+
   return (
     <Box mt={2} data-testid="categories">
       {props.categories.map(category => {
