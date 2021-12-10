@@ -1,29 +1,30 @@
 import React from 'react';
-import { AppBar, Box, Toolbar, Typography, Button, IconButton } from '@mui/material';
-// import MenuIcon from '@mui/icons-material/Menu';
+import { connect } from 'react-redux';
+import { AppBar, Box, Toolbar, Typography, Button } from '@mui/material';
+import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded';
+import StoreMallDirectoryOutlinedIcon from '@mui/icons-material/StoreMallDirectoryOutlined';
+import { grey } from '@mui/material/colors';
 // import './header.scss';
 
-function Header() {
+const Header = ({cartItems}) => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" style={{backgroundColor: '#3b3b43'}}>
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            {/* <MenuIcon /> */}
-          </IconButton>
           <Typography ml={4} variant="h2" component="div" sx={{ flexGrow: 1 }}>
-            Virtual Store
+            <StoreMallDirectoryOutlinedIcon sx={{ fontSize: 60, mb: '-.65rem', color: grey[500] }}/>Virtual Store
           </Typography>
-          <Button color="inherit">Cart</Button>
+          <Button color="inherit" variant="outlined" startIcon={<ShoppingCartRoundedIcon />}>Cart ({cartItems})</Button>
         </Toolbar>
       </AppBar>
     </Box>
   );
-}
+};
 
-export default Header;
+const mapStateToProps = state => {
+  return {
+    cartItems: state.cart.products.length
+  };
+};
+
+export default connect(mapStateToProps)(Header);
