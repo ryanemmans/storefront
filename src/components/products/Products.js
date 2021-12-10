@@ -4,6 +4,8 @@ import { Grid, Typography, Card, CardActions, CardContent, CardMedia, Button } f
 // import './products.scss';
 
 function Products(props) {
+  console.log(props);
+
   return (
     <Grid container columns={{ xs: 4, sm: 8, md: 12 }} direction="row">
       {props.products.length === 0 && (<Typography>No products yet.</Typography>)}
