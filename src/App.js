@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <Header className="App-header" />
-      <Categories />
+      <Categories className="categories" />
       <Grid ml={8} mr={8} justifyContent="space-around" >
         <Products />
       </Grid>
