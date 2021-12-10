@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { selectCategory } from '../../store/categories';
 import { Box, Button } from '@mui/material';
 // import './categories.scss';
 // stack typography from mui
@@ -25,7 +26,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  selectCategory: (category) => dispatch({ type: 'SELECT_CATEGORY', payload: category }),
+  selectCategory: (category) => dispatch(selectCategory(category)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Categories);
