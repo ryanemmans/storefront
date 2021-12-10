@@ -22,6 +22,23 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  position: absolute;
+  margin-top: 0;
+  top: 0;
+  left: 0; 
+  right: 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  background: rgb(242, 242, 242);
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 -.5px .1rem #aeaeae;
 }
 
 .App-link {
