@@ -12,6 +12,8 @@ Phase 2: Continue work on the e-Commerce storefront, breaking up the store into 
 
 Phase 3: Connect the Virtual Store to an API to retrieve live data from your data source, using `thunk` to enable asynchronous actions.
 
+Phase 4: Complete work on the Virtual Store by adding detail pages for individual products as well as the the cart checkout page
+
 ### **Phase 1 Requirements**
 
 Setup the basic scaffolding of the application with initial styling and basic behaviors. This initial build sets up the file structure and state management so that we can progressively build this application in a scalable manner
@@ -36,6 +38,13 @@ In phase 3, we will be connecting our Virtual Store to a live API so that our da
 - As a user, I want to interact with live inventory so that I have confidence that the displayed products are in stock
 - As a user, I want to know that when I add an item to my cart, that it is removed from inventory so that no other users can purchase it
 
+### **Phase 4 Requirements**
+
+In phase 4, we will be completing work on our Virtual Store by adding two full page views to the application: Product Details and Checkout
+
+- As a user, I want to see a full detail view of a product so that I can make a more informed choice about purchasing it.
+- As a user, I want to view my full cart and initiate the checkout process so that I can purchase my items and have them delivered
+
 ### Application Flow:
 
 User sees a list of categories
@@ -56,6 +65,22 @@ User sees a list of categories
 ## UML
 
 ![Virtual Store UML](./img/virtual-store.png)
+
+## Application Architecture
+
+- Add `<BrowserRouter />` to your application
+- Create a new page component: `<ProductDetails />`
+  - Alter each product on the listing screen to have a new “Product Details” button
+  - When clicked, `<Link to...>` /products/## where ## is the product ID
+  - On this page, show an expanded view of the product, including placeholders for additional information such as reviews, suggestions, etc
+- Create a new page component: `<ShoppingCart />`
+  - Link to this page from the `Cart (x)` in the header, on the `/cart` route
+  - On this page, show:
+    - A summary of items in tabular format
+    - A final order total
+    - A form allowing the user to enter their billing/shipping address and credit card information
+    - On submit, simply draw an alert that says “Thank you for your purchase”
+      - We will not be processing transactions or storing orders just yet
 
 ## Technical Requirements / Notes
 
